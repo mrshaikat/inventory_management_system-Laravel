@@ -1,0 +1,1 @@
+<link rel="icon" href="{{ asset('frontend/assets/img/favicon.png') }}" type="image/png"/>
