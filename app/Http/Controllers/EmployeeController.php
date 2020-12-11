@@ -73,7 +73,7 @@ class EmployeeController extends Controller
         $data = Employee::find($id);
         $data -> delete();
 
-        return redirect() -> route('show.employee') -> with('success', 'Category Delete Successfull');
+        return redirect() -> route('show.employee') -> with('success', 'Employee Delete Successfull');
     }
 
     public function viewSingle($id){
@@ -88,6 +88,39 @@ class EmployeeController extends Controller
         $all_data = Employee::find($id);
         return view('admin.employee.edit_employee', compact('all_data'));
 
+    }
+
+    public function update(Request $request, $id){
+
+        $update = Employee::find($id);
+
+        if( $request -> hasFile('new_picture') ){
+
+            $picture = $request -> file('new_picture');
+            $picture_name = md5(time().rand()).'.'. $picture -> getClientOriginalExtension();
+            $picture -> move(public_path('media/employee_photos'), $picture_name );
+
+            unlink('media/employee_photos'. '/'.$request -> old_picture );
+
+        }else{
+
+            $picture_name = $request -> old_picture ;
+        }
+
+        $update -> name = $request -> name;
+        $update -> email = $request -> email;
+        $update -> phone = $request -> phone;
+        $update -> address = $request -> address;
+        $update -> nid_no = $request -> nid_no;
+        $update -> exprience = $request -> exprience;
+        $update -> photo = $picture_name;
+        $update -> salary = $request -> salary;
+        $update -> vacation = $request -> vacation;
+        $update -> city = $request -> city;
+
+        $update -> update();
+
+        return redirect() -> route('show.employee') -> with('success', 'Employee Update Successfull');
 
 
     }

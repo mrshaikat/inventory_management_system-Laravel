@@ -56,7 +56,7 @@
 
                                             <a class=" btn btn-primary btn-sm" href="{{ route('single.employee', $employee -> id) }}">View</a>
 
-                                            <a class=" btn btn-warning btn-sm" href="{{ route('update.employee', $employee -> id) }}">Edit</a>
+                                            <a class=" btn btn-warning btn-sm" href="{{ route('edit.employee', $employee -> id) }}">Edit</a>
 
                                             <form style="display: inline;" action="{{ route('destroy.employee', $employee -> id) }}" method="POST">
                                                 @csrf

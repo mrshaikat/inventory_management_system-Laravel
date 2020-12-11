@@ -42,3 +42,5 @@ Route::get('single-employee/{id}', 'App\Http\Controllers\EmployeeController@view
 Route::delete('delete-employee/{id}', 'App\Http\Controllers\EmployeeController@destroy') -> name('destroy.employee');
 
 Route::get('edit-employee/{id}', 'App\Http\Controllers\EmployeeController@edit') -> name('edit.employee');
+
+Route::put('update-employee/{id}', 'App\Http\Controllers\EmployeeController@update') -> name('update.employee');
