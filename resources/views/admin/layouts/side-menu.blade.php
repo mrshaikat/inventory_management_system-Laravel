@@ -42,6 +42,15 @@
                     </ul>
                 </li>
 
+                <li class="submenu">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span>Customer</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{{ route('customer.index') }}">All Customers</a></li>
+                        <li><a href="{{ route('customer.create') }}">Add Customer</a></li>
+
+                    </ul>
+                </li>
+
                 <li>
                     <a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
                 </li>

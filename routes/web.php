@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CustomerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,17 +32,16 @@ Route::get('contact', 'App\Http\Controllers\FrontEndController@showContact') -> 
 Route::get('about', 'App\Http\Controllers\FrontEndController@showAbout') -> name('about.show');
 Route::get('cart', 'App\Http\Controllers\FrontEndController@showCart') -> name('cart.show');
 
-// Admin load
 
+//Employee routes here
 Route::get('show-employee', 'App\Http\Controllers\EmployeeController@showEmployee') -> name('show.employee');
 Route::get('add-employee', 'App\Http\Controllers\EmployeeController@create') -> name('add.employee');
 Route::post('insert-employee', 'App\Http\Controllers\EmployeeController@store');
 Route::get('single-employee/{id}', 'App\Http\Controllers\EmployeeController@viewSingle') -> name('single.employee');
 
-
-
 Route::delete('delete-employee/{id}', 'App\Http\Controllers\EmployeeController@destroy') -> name('destroy.employee');
-
 Route::get('edit-employee/{id}', 'App\Http\Controllers\EmployeeController@edit') -> name('edit.employee');
-
 Route::put('update-employee/{id}', 'App\Http\Controllers\EmployeeController@update') -> name('update.employee');
+
+//Customer routes here
+Route::resource('customer', CustomerController::class);
