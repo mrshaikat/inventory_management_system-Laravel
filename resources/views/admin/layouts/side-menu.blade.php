@@ -51,6 +51,15 @@
                     </ul>
                 </li>
 
+                <li class="submenu">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span>Supplier</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{{ route('supplier.index') }}">All Suppiers</a></li>
+                        <li><a href="{{ route('supplier.create') }}">Add Supplier</a></li>
+
+                    </ul>
+                </li>
+
                 <li>
                     <a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
                 </li>
