@@ -60,6 +60,16 @@
                     </ul>
                 </li>
 
+                <li class="submenu">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span>Salary (EMP)</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{{ route('salary.index') }}">All Salary</a></li>
+                        <li><a href="{{ route('salary.create') }}">Add Advance Salary</a></li>
+
+                    </ul>
+                </li>
+
+
                 <li>
                     <a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
                 </li>

@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Employee extends Model
+class Salary extends Model
 {
     use HasFactory;
-    protected $guarded =[];
 
-    public function salarys(){
-        return $this-> hasOne(Salary::class, 'emp_id', 'id');
+    protected $guarded = [];
+
+    public function employies(){
+        return $this-> belongsTo(Employee::class, 'emp_id', 'id');
     }
 
 

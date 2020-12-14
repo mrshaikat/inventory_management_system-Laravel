@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\SalaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,4 @@ Route::put('update-employee/{id}', 'App\Http\Controllers\EmployeeController@upda
 //Customer routes here
 Route::resource('customer', CustomerController::class);
 Route::resource('supplier', SupplierController::class);
+Route::resource('salary', SalaryController::class);
