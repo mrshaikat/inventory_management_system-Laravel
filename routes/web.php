@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\PaySalaryController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +52,7 @@ Route::put('update-employee/{id}', 'App\Http\Controllers\EmployeeController@upda
 Route::resource('customer', CustomerController::class);
 Route::resource('supplier', SupplierController::class);
 Route::resource('salary', SalaryController::class);
+Route::resource('pay_salary', PaySalaryController::class);
+Route::resource('category', CategoryController::class);
+Route::resource('product', ProductController::class);
+

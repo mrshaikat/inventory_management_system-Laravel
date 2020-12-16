@@ -65,6 +65,26 @@
                     <ul style="display: none;">
                         <li><a href="{{ route('salary.index') }}">All Salary</a></li>
                         <li><a href="{{ route('salary.create') }}">Add Advance Salary</a></li>
+                        <li><a href="{{ route('pay_salary.index') }}">Pay Salary</a></li>
+                        <li><a href="">Last Month Salary</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="submenu">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span>Category</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{{ route('category.index') }}">All Categories</a></li>
+                        <li><a href="{{ route('category.create') }}">Add Category</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="submenu">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span>Product</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{{ route('product.index') }}">All Product</a></li>
+                        <li><a href="{{ route('product.create') }}">Add Product</a></li>
 
                     </ul>
                 </li>
