@@ -13,7 +13,7 @@
                         @include('validate')
                         <div class="card pl-3 pr-3">
                             <div class="card-header">
-                                <h4 class="card-title">Add Product</h4>
+                                <h4 class="card-title">Add Product <a class="btn btn-primary btn-sm pull-right" href="{{ route('product.index') }}">All Product</a></h4>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
@@ -68,12 +68,12 @@
 
                                     <div class="form-group">
                                         <label>Buying Price</label>
-                                        <input name="buying_price" type="text" class="form-control">
+                                        <input name="buying_price" type="text" class="form-control" placeholder="Buying Price">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Selling Price</label>
-                                        <input name="selling_price" type="text" class="form-control" placeholder="Back Branch">
+                                        <input name="selling_price" type="text" class="form-control" placeholder="Selling Price">
                                     </div>
 
 

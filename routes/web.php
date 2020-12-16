@@ -8,6 +8,7 @@ use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\PaySalaryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,11 +49,37 @@ Route::delete('delete-employee/{id}', 'App\Http\Controllers\EmployeeController@d
 Route::get('edit-employee/{id}', 'App\Http\Controllers\EmployeeController@edit') -> name('edit.employee');
 Route::put('update-employee/{id}', 'App\Http\Controllers\EmployeeController@update') -> name('update.employee');
 
-//Customer routes here
+//Customer routes
 Route::resource('customer', CustomerController::class);
+
+//supplier Route
 Route::resource('supplier', SupplierController::class);
+
+//Salary Route
 Route::resource('salary', SalaryController::class);
+//Pay Salary Route
 Route::resource('pay_salary', PaySalaryController::class);
+
+//Category Route
 Route::resource('category', CategoryController::class);
+
+//Product Route
 Route::resource('product', ProductController::class);
+
+//Expense Route
+Route::resource('expense', ExpenseController::class);
+
+//Today expense
+Route::get('today-expense', 'App\Http\Controllers\ExpenseController@TodayExpense') -> name('today.expense');
+
+//Monthly Expense
+Route::get('monthly-expense', 'App\Http\Controllers\ExpenseController@MonthlyExpense') -> name('monthly.expense');
+//Yearly Expense
+Route::get('yearly-expense', 'App\Http\Controllers\ExpenseController@YearlyExpense') -> name('yearly.expense');
+
+//January Expense Route
+Route::get('january-expense', 'App\Http\Controllers\ExpenseController@JanuaryExpense') -> name('january.expense');
+
+//February Expense Route
+Route::get('february-expense', 'App\Http\Controllers\ExpenseController@FebruaryExpense') -> name('february.expense');
 

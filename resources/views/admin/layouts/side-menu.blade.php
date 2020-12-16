@@ -89,6 +89,18 @@
                     </ul>
                 </li>
 
+                <li class="submenu">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span>Expense</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+
+                        <li><a href="{{ route('expense.create') }}">Add New</a></li>
+                        <li><a href="{{ route('today.expense') }}">Today Expense</a></li>
+                        <li><a href="{{ route('monthly.expense') }}">Monthly Expense</a></li>
+                        <li><a href="{{ route('yearly.expense') }}">Yearly Expense</a></li>
+
+                    </ul>
+                </li>
+
 
                 <li>
                     <a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
