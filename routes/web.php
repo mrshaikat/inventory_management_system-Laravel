@@ -83,3 +83,32 @@ Route::get('january-expense', 'App\Http\Controllers\ExpenseController@JanuaryExp
 //February Expense Route
 Route::get('february-expense', 'App\Http\Controllers\ExpenseController@FebruaryExpense') -> name('february.expense');
 
+//March Expense Route
+Route::get('march-expense', 'App\Http\Controllers\ExpenseController@MarchExpense') -> name('march.expense');
+
+//April Expense Route
+Route::get('april-expense', 'App\Http\Controllers\ExpenseController@AprilExpense') -> name('april.expense');
+
+//May Expense Route
+Route::get('may-expense', 'App\Http\Controllers\ExpenseController@MayExpense') -> name('may.expense');
+
+//June Expense Route
+Route::get('june-expense', 'App\Http\Controllers\ExpenseController@JuneExpense') -> name('june.expense');
+
+//July Expense Route
+Route::get('july-expense', 'App\Http\Controllers\ExpenseController@JulyExpense') -> name('july.expense');
+
+//August Expense Route
+Route::get('august-expense', 'App\Http\Controllers\ExpenseController@AugustExpense') -> name('august.expense');
+
+//September Expense Route
+Route::get('september-expense', 'App\Http\Controllers\ExpenseController@SeptemberExpense') -> name('september.expense');
+
+//October Expense Route
+Route::get('october-expense', 'App\Http\Controllers\ExpenseController@OctoberExpense') -> name('october.expense');
+
+//November Expense Route
+Route::get('noverber-expense', 'App\Http\Controllers\ExpenseController@NoverberExpense') -> name('noverber.expense');
+
+//December Expense Route
+Route::get('december-expense', 'App\Http\Controllers\ExpenseController@DecemberExpense') -> name('december.expense');

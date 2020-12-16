@@ -12,7 +12,7 @@
                     <div class="card-header">
                         <h4 class="card-title mb-0">
                             @php
-                                $month = "February";
+                                 $month = "November";
 
                             @endphp
                           @if( !empty( $month))
@@ -87,7 +87,7 @@
                             </table>
                         </div>
                         @php
-                        $month = "February";
+                         $month = "November";
                         $expense = DB::table('expenses') -> where('month', $month) -> sum('amount');
                     @endphp
                   @if( !empty( $expense))

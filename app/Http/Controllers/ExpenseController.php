@@ -135,5 +135,101 @@ class ExpenseController extends Controller
         return view('admin.expense.month.january', compact('monthly'));
     }
 
+    public function FebruaryExpense(){
+        $month = "February";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.february', compact('monthly'));
+    }
+
+    public function MarchExpense(){
+        $month = "March";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.march', compact('monthly'));
+    }
+
+    public function AprilExpense(){
+        $month = "April";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.april', compact('monthly'));
+    }
+
+
+    public function MayExpense(){
+        $month = "May";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.may', compact('monthly'));
+    }
+
+
+
+    public function JuneExpense(){
+        $month = "June";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.june', compact('monthly'));
+    }
+
+
+
+    public function JulyExpense(){
+        $month = "July";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.july', compact('monthly'));
+    }
+
+
+
+    public function AugustExpense(){
+        $month = "August";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.august', compact('monthly'));
+    }
+
+    public function SeptemberExpense(){
+        $month = "September";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.septemper', compact('monthly'));
+    }
+
+    public function OctoberExpense(){
+        $month = "October";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.october', compact('monthly'));
+    }
+
+    public function NoverberExpense(){
+        $month = "November";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.november', compact('monthly'));
+    }
+
+    public function DecemberExpense(){
+        $month = "December";
+
+        $monthly = Expense::where('month', $month ) -> get();
+
+        return view('admin.expense.month.december', compact('monthly'));
+    }
+
+
 
 }

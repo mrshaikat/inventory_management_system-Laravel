@@ -13,26 +13,26 @@
                         <h4 class="card-title mb-0">
                             @php
                                 $month = "January";
-                                $expense = DB::table('expenses') -> where('month', $month) -> sum('amount');
+
                             @endphp
-                          @if( !empty( $expense))
+                          @if( !empty( $month))
                           <p class="text-center text-danger">  <strong>{{ $month  }} Expense</strong> </p>
                           @endif
                             Monthly Expense
                             <div class="mt-2">
-                            <a class="btn btn-info btn-sm mb-1" href="{{ route('january.expense') }}">January</a>
-                            <a class="btn btn-danger btn-sm mb-1" href="">February</a>
-                            <a class="btn btn-success btn-sm mb-1" href="">March</a>
-                            <a class="btn btn-primary btn-sm mb-1" href="">April</a>
-                            <a class="btn btn-warning btn-sm mb-1" href="">May</a>
-                            <a class="btn btn-info btn-sm mb-1" href="">June</a>
-                            <a class="btn btn-danger btn-sm mb-1" href="">July</a>
-                            <a class="btn btn-success btn-sm mb-1" href="">August</a>
-                            <a class="btn btn-primary btn-sm mb-1" href="">September</a>
-                            <a class="btn btn-danger btn-sm mb-1" href="">October</a>
-                            <a class="btn btn-warning btn-sm mb-1" href="">Novermber</a>
-                            <a class="btn btn-info btn-sm mb-1" href="">December</a>
-                            </div>
+                                <a class="btn btn-info btn-sm mb-1" href="{{ route('january.expense') }}">January</a>
+                                <a class="btn btn-danger btn-sm mb-1" href="{{ route('february.expense') }}">February</a>
+                                <a class="btn btn-success btn-sm mb-1" href="{{ route('march.expense') }}">March</a>
+                                <a class="btn btn-primary btn-sm mb-1" href="{{ route('april.expense') }}">April</a>
+                                <a class="btn btn-warning btn-sm mb-1" href="{{ route('march.expense') }}">May</a>
+                                <a class="btn btn-info btn-sm mb-1" href="{{ route('june.expense') }}">June</a>
+                                <a class="btn btn-danger btn-sm mb-1" href="{{ route('july.expense') }}">July</a>
+                                <a class="btn btn-success btn-sm mb-1" href="{{ route('august.expense') }}">August</a>
+                                <a class="btn btn-primary btn-sm mb-1" href="{{ route('september.expense') }}">September</a>
+                                <a class="btn btn-danger btn-sm mb-1" href="{{ route('october.expense') }}">October</a>
+                                <a class="btn btn-warning btn-sm mb-1" href="{{ route('noverber.expense') }}">Novermber</a>
+                                <a class="btn btn-info btn-sm mb-1" href="{{ route('december.expense') }}">December</a>
+                                </div>
 
                             <a class="btn btn-success btn-sm pull-right" href="{{ route('expense.create') }}">Add Expense</a></h4>
 
