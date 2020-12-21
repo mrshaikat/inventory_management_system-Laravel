@@ -14,5 +14,9 @@ class Employee extends Model
         return $this-> hasOne(Salary::class, 'emp_id', 'id');
     }
 
+    public function attendences(){
+        return $this-> hasOne(Attdance::class, 'user_id', 'id');
+    }
+
 
 }

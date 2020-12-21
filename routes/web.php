@@ -9,6 +9,7 @@ use App\Http\Controllers\PaySalaryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\AttdanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,3 +113,13 @@ Route::get('noverber-expense', 'App\Http\Controllers\ExpenseController@NoverberE
 
 //December Expense Route
 Route::get('december-expense', 'App\Http\Controllers\ExpenseController@DecemberExpense') -> name('december.expense');
+
+//Attdance Route
+
+Route::resource('attendence', 'App\Http\Controllers\AttdanceController');
+
+
+
+
+
+
