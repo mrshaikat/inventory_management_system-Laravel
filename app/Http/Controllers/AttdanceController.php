@@ -91,9 +91,14 @@ class AttdanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($edit_date)
     {
-        //
+        $all_data = Attdance::where('edit_date', $edit_date ) -> get();
+
+
+
+
+        return view('admin.attendence.show', compact('all_data'));
     }
 
     /**
@@ -141,6 +146,8 @@ class AttdanceController extends Controller
              $update_attend = Attdance::where(['att_date' => $request -> att_date, 'id' => $id]) -> first();
 
              $update_attend -> update($data);
+
+             return redirect() -> route('attendence.index') -> with('success', 'Attendence Update successfull');
 
  }
 

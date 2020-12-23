@@ -41,6 +41,7 @@
 
                                         <td>
 
+                                        <a class=" btn btn-warning btn-sm" href="{{ route('attendence.show', $row -> edit_date) }}">View</a>
 
 
                                             <a class=" btn btn-warning btn-sm" href="{{ route('attendence.edit', $row -> edit_date) }}">Edit</a>

@@ -10,62 +10,83 @@
                 <div class="card">
                     @include('validate')
                     <div class="card-header">
-                        <h4 class="card-title">{{ $all_data -> name }}</h4>
+                        <h4 class="card-title">View Attendence
+
+
+                        </h4>
+
+                        <h4><span class=" text-info">{{ date("d F") }}</span> (<span class=" text-danger">{{date("d-m-y")}}</span>)</h4>
 
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="data-table-data" class="table table-striped mb-0">
+                            <table id="" class="table table-striped mb-0">
+                                <thead>
 
-                                @if( !empty($all_data -> photo) )
-                                <img id="table_img" src="{{ URL::to('/') }}/media/employee_photos/{{ $all_data -> photo }}" alt="centered image">
-                                @endif
 
-                                <tbody class="text-center">
-                                  <tr>
-                                      <td>Name</td>
-                                      <td>{{ $all_data -> name }}</td>
-                                  </tr>
+                                    <tr>
+                                        <th>SL</th>
 
-                                  <tr>
-                                    <td>E-mail</td>
-                                    <td>{{ $all_data -> email }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Phone Number</td>
-                                    <td>{{ $all_data -> phone }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Address</td>
-                                    <td>{{ $all_data -> address }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>NID NO</td>
-                                    <td>{{ $all_data -> nid_no }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Exprience</td>
-                                    <td>{{ $all_data -> exprience }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Vacation</td>
-                                    <td>{{ $all_data -> vacation }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>City</td>
-                                    <td>{{ $all_data -> city }}</td>
-                                </tr>
+                                        <th>Name</th>
+                                        <th>Photo</th>
 
 
 
+
+                                        <th>Attendence</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+
+
+                                        @foreach($all_data as $data)
+                                        <tr>
+                                            <td>{{ $loop -> index+1 }}</td>
+
+
+
+                                            <td>{{ $data -> employees -> name}}</td>
+
+                                            <td>
+                                                @if( !empty( $data -> employees -> photo) )
+                                                <img style="height: 50px; width: 50px;" src="{{ URL::to('/') }}/media/employee_photos/{{  $data -> employees -> photo}}" alt="">
+                                                @endif
+
+
+
+                                            </td>
+
+                                            <input type="hidden" name="id[]" value="{{ $data -> id }}">
+
+                                             <td>
+
+                                                <input
+                                                @php
+                                                    if( $data -> attendence == 'Present')
+                                                   echo "checked";
+                                                @endphp
+                                                class=" mr-1" type="radio" name="attendence[{{ $data -> id }}]" value="Present"><label class=" mr-3" for="" disabled="">Present</label>
+
+                                                <input
+                                                @php
+                                                if( $data -> attendence == 'Absent')
+                                               echo "checked";
+                                            @endphp
+                                                class=" mr-1" type="radio" name="attendence[{{ $data -> id }}]" value="Absent" disabled=""><label for="">Absent</label>
+                                            </td>
+
+                                            <input type="hidden" name="att_date" value="{{ $data -> att_date }}">
+                                            <input type="hidden" name="att_year" value="{{ $data -> att_year }}">
+                                            <input type="hidden" name="att_month" value="{{ $data -> att_month }}">
+                                        </tr>
+                                        @endforeach
                                 </tbody>
+
                             </table>
+
+
                         </div>
                     </div>
                 </div>
