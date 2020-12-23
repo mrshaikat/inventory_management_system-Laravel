@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\AttdanceController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,6 +118,10 @@ Route::get('december-expense', 'App\Http\Controllers\ExpenseController@DecemberE
 //Attdance Route
 
 Route::resource('attendence', 'App\Http\Controllers\AttdanceController');
+
+//Setting Route
+Route::get('setting', 'App\Http\Controllers\SettingController@Setting') -> name('setting.create');
+Route::put('setting-update/{id}', 'App\Http\Controllers\SettingController@Update') -> name('setting.update');
 
 
 

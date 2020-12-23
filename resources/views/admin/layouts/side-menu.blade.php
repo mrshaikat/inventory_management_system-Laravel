@@ -129,7 +129,7 @@
 
 
                 <li>
-                    <a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
+                    <a href="{{ route('setting.create') }}"><i class="fe fe-vector"></i> <span>Settings</span></a>
                 </li>
 
 

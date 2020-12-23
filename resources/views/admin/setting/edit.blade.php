@@ -63,17 +63,17 @@
 
                                     <div class="form-group">
 
-                                            @if( !empty($all_data -> photo) )
+ @if( !empty($all_data -> photo) )
                                             <img style="height: 100px; width: 100px;" src="{{ URL::to('/') }}/media/employee_photos/{{ $all_data -> photo }}" alt="">
                                             @endif <br>
 
                                             <input type="hidden" name="old_picture" value="{{ $all_data -> photo }}">
 
-
-                                        <img class="" id="image" src="#"><label>Photo</label>
+                                          
+                                        <img class="" id="image" src="#"><label>Photo</label> 
                                         <br>
-
-
+                                        
+                                        
 
 
 

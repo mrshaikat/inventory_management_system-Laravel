@@ -4,7 +4,7 @@
 		<!-- Page Wrapper -->
 		<div class="page-wrapper">
 
-			<div class="content container-fluid">
+			<div class="content container">
 
 
                 <div class="card">
@@ -41,15 +41,15 @@
 
                                         <td>
 
-                                        <a class=" btn btn-warning btn-sm" href="{{ route('attendence.show', $row -> edit_date) }}">View</a>
+                                        <a class=" btn btn-success btn-sm" href="{{ route('attendence.show', $row -> edit_date) }}">View</a>
 
 
                                             <a class=" btn btn-warning btn-sm" href="{{ route('attendence.edit', $row -> edit_date) }}">Edit</a>
 
-                                            <form style="display: inline;" action="" method="POST">
+                                            {{-- <form style="display: inline;" action="" method="POST">
 
                                                 <button id="delete" class="btn btn-danger btn-sm">Delete</button>
-                                            </form>
+                                            </form> --}}
                                         </td>
                                     </tr>
                                     @endforeach
