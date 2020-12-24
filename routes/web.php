@@ -123,7 +123,11 @@ Route::resource('attendence', 'App\Http\Controllers\AttdanceController');
 Route::get('setting', 'App\Http\Controllers\SettingController@Setting') -> name('setting.create');
 Route::put('setting-update/{id}', 'App\Http\Controllers\SettingController@Update') -> name('setting.update');
 
+//Elcel Import and export
 
+Route::get('import-product', 'App\Http\Controllers\ProductController@ImportProduct') -> name('import.product');
+Route::get('export', 'App\Http\Controllers\ProductController@export') -> name('export');
+Route::post('import', 'App\Http\Controllers\ProductController@import') -> name('import');
 
 
 

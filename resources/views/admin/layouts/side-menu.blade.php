@@ -89,6 +89,7 @@
                     <ul style="display: none;">
                         <li><a href="{{ route('product.index') }}">All Product</a></li>
                         <li><a href="{{ route('product.create') }}">Add Product</a></li>
+                        <li><a href="{{ route('import.product') }}">Import Product</a></li>
 
                     </ul>
                 </li>

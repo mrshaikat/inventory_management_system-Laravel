@@ -13,7 +13,12 @@
                         @include('validate')
                         <div class="card pl-3 pr-3">
                             <div class="card-header">
-                                <h4 class="card-title">Add Product <a class="btn btn-primary btn-sm pull-right" href="{{ route('product.index') }}">All Product</a></h4>
+                                <h4 class="card-title">Add Product
+
+
+                                    <a class="btn btn-primary btn-sm pull-right" href="{{ route('product.index') }}">All Product</a>
+                                    <a class="btn btn-success btn-sm pull-right mr-2" href="{{ route('import.product') }}">Import Product</a>
+                                </h4>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">

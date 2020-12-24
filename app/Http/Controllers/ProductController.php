@@ -7,6 +7,10 @@ use App\Models\Product;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 
+use App\Exports\ProductExport;
+use App\Imports\ProductImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class ProductController extends Controller
 {
 
@@ -137,4 +141,24 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function ImportProduct(){
+
+        return view('admin.product.import_product');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ProductExport, 'products.xlsx');
+    }
+
+    public function import(Request $request)
+    {
+        $import = Excel::import(new ProductImport, $request -> file('import_file'));
+
+        return redirect() -> route('product.index') -> with('success', 'Product added successfull');
+
+
+    }
+
 }
