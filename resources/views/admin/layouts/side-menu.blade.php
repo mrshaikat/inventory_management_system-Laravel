@@ -14,7 +14,7 @@
                 </li>
 
                 <li class="">
-                    <a href=""><i class="fa fa-home"></i> <span>POS</span></a>
+                    <a href="{{ route('pos') }}"><i class="fa fa-home"></i> <span>POS</span></a>
                 </li>
 
                {{-- <li class="">

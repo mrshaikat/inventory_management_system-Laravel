@@ -131,4 +131,11 @@ Route::post('import', 'App\Http\Controllers\ProductController@import') -> name('
 
 
 
+//Pos ROutes
+
+Route::get('pos', 'App\Http\Controllers\PosController@index') -> name('pos');
+
+
+
+
 

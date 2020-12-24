@@ -10,7 +10,7 @@
                 <div class="card">
                     @include('validate')
                     <div class="card-header">
-                        <h4 class="card-title">Take Attendence<a class="btn btn-primary btn-sm pull-right" href="{{ route('attendence.index') }}">ALL Attedence</a>
+                        <h4 class="card-title">Take Attendence<a class="btn btn-success btn-sm pull-right" href="{{ route('attendence.index') }}">ALL Attedence</a>
 
 
                         </h4>
@@ -78,7 +78,9 @@
                                 </tbody>
 
                             </table>
-                            <button type="submit" class="btn btn-success mt-3">Take Attendence</button>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">Take Attendance</button>
+                            </div>
                         </form>
                         </div>
                     </div>
