@@ -135,6 +135,11 @@ Route::post('import', 'App\Http\Controllers\ProductController@import') -> name('
 
 Route::get('pos', 'App\Http\Controllers\PosController@index') -> name('pos');
 
+//Cart Route here
+
+Route::post('add-cart', 'App\Http\Controllers\CartController@index') -> name('cart.add');
+Route::post('update-cart/{rowId}', 'App\Http\Controllers\CartController@update') -> name('cart.update');
+Route::get('remove-cart/{rowId}', 'App\Http\Controllers\CartController@destroy') -> name('cart.remove');
 
 
 
