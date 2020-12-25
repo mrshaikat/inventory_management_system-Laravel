@@ -140,6 +140,8 @@ Route::get('pos', 'App\Http\Controllers\PosController@index') -> name('pos');
 Route::post('add-cart', 'App\Http\Controllers\CartController@index') -> name('cart.add');
 Route::post('update-cart/{rowId}', 'App\Http\Controllers\CartController@update') -> name('cart.update');
 Route::get('remove-cart/{rowId}', 'App\Http\Controllers\CartController@destroy') -> name('cart.remove');
+Route::post('create-invoice', 'App\Http\Controllers\CartController@CreateInvoice') -> name('invoice.create');
+Route::post('final-invoice', 'App\Http\Controllers\CartController@finalInvoice') -> name('invoice.final');
 
 
 

@@ -30,25 +30,9 @@
 
 
             <div class="row">
+
                 <div class="col-md-4">
-                    <div class="panel">
-                        <h4 class=" text-white bg-primary p-3">Customer
-                            <a class=" btn btn-sm btn-success pull-right" data-toggle="modal" href="#customer-modal">Add New</a>
-
-
-                        </h4>
-                        @include('validate')
-                        <select class="form-control m-0 p-0" name="" id="">
-                            <option disabled selected value="">Select Customer</option>
-
-
-                            @foreach($all_customer as $customer)
-                            <option value="{{ $customer -> id }}">{{ $customer -> name }}</option>
-                            @endforeach
-
-
-                        </select>
-                    </div>
+                    @include('validate')
 
                     {{-- pricing table --}}
                         <div class="card mb-5 box-shadow text-center">
@@ -104,7 +88,7 @@
                                 </ul>
 
 
-                            <div class=" pricing-footer bg-primary text-white">
+                            <div class=" pricing-footer bg-info text-white">
                                 <div style="border: 2px solid grey">
                                   <div class=" bg-secondary p-2">
                                     <p style="font-size: 20px;" class="mt-2"><strong>Quentity: {{ Cart::count() }}</strong></p>
@@ -121,11 +105,35 @@
                                 </div>
 
                             </div>
+                        {{-- Invoice Form--}}
+                            <form action="{{ route('invoice.create') }}" method="POST">
+                                @csrf
+                            <div class="panel mt-2">
+                                <h4 class=" text-white bg-primary p-3">Select Customer
+                                    <a class=" btn btn-sm btn-success pull-right" data-toggle="modal" href="#customer-modal">Add New</a>
 
-                            <div class="submit-section mb-3 mt-3">
-                                <button class="btn btn-success">Create Invoice</button>
+
+                                </h4>
+
+                                <select class="form-control m-0 p-0" name="cus_id" id="">
+                                    <option disabled selected value="">Select Customer</option>
+
+
+                                    @foreach($all_customer as $customer)
+                                    <option value="{{ $customer -> id }}">{{ $customer -> name }}</option>
+                                    @endforeach
+
+
+                                </select>
                             </div>
 
+
+
+                            <div class="submit-section mb-3 mt-3">
+                                <button type="submit" class="btn btn-success">Create Invoice</button>
+                            </div>
+
+                        </form>
 
                         </div>
 
