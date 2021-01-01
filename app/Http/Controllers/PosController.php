@@ -43,6 +43,7 @@ class PosController extends Controller
     public function ViewOrder($id){
         $order = DB::table('orders')
         -> join('customers', 'orders.customer_id', 'customers.id')
+
         -> where('orders.id', $id)
         -> first();
 
@@ -52,6 +53,26 @@ class PosController extends Controller
         -> where('order_id', $id)
         -> get();
 
-        return view('admin.orders.confirmation', compact('order','order_details'));
+        $odr_id = DB::table('orders') -> first();
+
+        return view('admin.orders.confirmation', compact('order','order_details', 'odr_id'));
+
+
+    }
+
+    public function PosDone($id){
+
+        DB::table('orders') -> where('id', $id) -> update(['order_status' => 'success']);
+
+        return redirect() -> route('pending.order') -> with('success' , 'Order Confirm successfull');
+    }
+
+    public function SuccessOrder(){
+        $success = DB::table('orders')
+        -> join('customers', 'orders.customer_id', 'customers.id')
+        ->select('customers.name', 'orders.*') -> where('order_status', 'success') -> get();
+
+        return view('admin.orders.success', compact('success'));
+
     }
 }

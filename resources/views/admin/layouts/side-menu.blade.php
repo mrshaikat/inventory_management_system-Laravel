@@ -111,7 +111,8 @@
                     <ul style="display: none;">
 
                         <li><a href="{{ route('pending.order') }}">Pending Orders</a></li>
-                        <li><a href="">Second</a></li>
+                        <li><a href="{{ route('success.order') }}">Success Orders</a></li>
+
 
 
                     </ul>
