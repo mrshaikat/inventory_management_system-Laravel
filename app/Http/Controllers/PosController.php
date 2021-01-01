@@ -36,6 +36,7 @@ class PosController extends Controller
         -> join('customers', 'orders.customer_id', 'customers.id')
         ->select('customers.name', 'orders.*') -> where('order_status', 'pending') -> get();
 
+
         return view('admin.orders.pending', compact('pending'));
 
     }
@@ -53,7 +54,7 @@ class PosController extends Controller
         -> where('order_id', $id)
         -> get();
 
-        $odr_id = DB::table('orders') -> first();
+        $odr_id = DB::table('orders') -> select('orders.*') -> where('id', $id)-> first();
 
         return view('admin.orders.confirmation', compact('order','order_details', 'odr_id'));
 

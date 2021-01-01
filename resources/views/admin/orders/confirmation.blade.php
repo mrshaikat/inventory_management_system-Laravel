@@ -16,7 +16,7 @@
                           <strong>Today Date: {{ date("l jS \of F Y h:i:s A") }}</strong>
                             <span class="float-right"> <strong>Order Date:</strong> {{ $order -> order_date  }}</span> <br>
                             <span class="float-right"> <strong>Order Status:</strong> <span class=" badge badge-danger"> {{ $order -> order_status }}</span></span> <br>
-                            <span class="float-right"> <strong class="mr-5">Order ID:</strong> <span> {{ $order -> id  }}</span></span> <br>
+                            <span class="float-right"> <strong class="mr-5">Order ID:</strong> <span> {{ $odr_id -> id  }}</span></span> <br>
 
 
 
@@ -152,12 +152,17 @@
 
                           </div>
 
-                          @if( $order -> order_status = 'success')
-                          @else
-                          <a  href="{{ route('pos.order', $odr_id -> id ) }}" class="btn btn-primary pull-right mt-5 text-white">Done</a>
 
-                          <a class="btn btn-secondary pull-right mt-5 mr-2 text-white" onclick="window.print()"><i class="fa fa-print"></i></a>
-                          @endif
+                        @if($order -> order_status == 'success')
+                            @else
+
+                           <div>
+                            <a  href="{{ route('pos.order', $odr_id -> id ) }}" class="btn btn-primary pull-right mt-5 text-white">Confirm</a>
+
+                            <a class="btn btn-secondary pull-right mt-5 mr-2 text-white" onclick="window.print()"><i class="fa fa-print"></i></a>
+                           </div>
+                        @endif
+
 
 
                           </div>
