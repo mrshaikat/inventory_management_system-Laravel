@@ -132,8 +132,10 @@ Route::post('import', 'App\Http\Controllers\ProductController@import') -> name('
 
 
 //Pos ROutes
-
 Route::get('pos', 'App\Http\Controllers\PosController@index') -> name('pos');
+
+Route::get('pending/order', 'App\Http\Controllers\PosController@PendingOrder') -> name('pending.order');
+Route::get('view-order-status/{id}', 'App\Http\Controllers\PosController@ViewOrder') -> name('view.order');
 
 //Cart Route here
 

@@ -107,6 +107,18 @@
                 </li>
 
                 <li class="submenu">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span>Orders</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+
+                        <li><a href="{{ route('pending.order') }}">Pending Orders</a></li>
+                        <li><a href="">Second</a></li>
+
+
+                    </ul>
+                </li>
+
+
+                <li class="submenu">
                     <a href="#"><i class="fa fa-list-alt"></i> <span>Sales Report</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
 

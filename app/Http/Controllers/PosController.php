@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PosController extends Controller
 {
@@ -27,5 +28,30 @@ class PosController extends Controller
         $all_category = Category::latest() -> get();
         return view('admin.pos.pos', compact('all_product', 'all_customer','all_category'));
 
+    }
+
+    public function PendingOrder(){
+
+        $pending = DB::table('orders')
+        -> join('customers', 'orders.customer_id', 'customers.id')
+        ->select('customers.name', 'orders.*') -> where('order_status', 'pending') -> get();
+
+        return view('admin.orders.pending', compact('pending'));
+
+    }
+
+    public function ViewOrder($id){
+        $order = DB::table('orders')
+        -> join('customers', 'orders.customer_id', 'customers.id')
+        -> where('orders.id', $id)
+        -> first();
+
+        $order_details = DB::table('orderdetails')
+        -> join('products', 'orderdetails.product_id', 'products.id')
+        ->select('orderdetails.*', 'products.product_name', 'products.product_code')
+        -> where('order_id', $id)
+        -> get();
+
+        return view('admin.orders.confirmation', compact('order','order_details'));
     }
 }
